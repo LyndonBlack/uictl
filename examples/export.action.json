@@ -1,0 +1,68 @@
+{
+  "name": "export-report",
+  "app": "DemoApp",
+  "params": {
+    "path": {
+      "required": true
+    }
+  },
+  "steps": [
+    {
+      "op": "click",
+      "select": {
+        "role": "button",
+        "title": "Export"
+      },
+      "expect": [
+        {
+          "exists": {
+            "role": "window",
+            "title": "Save"
+          }
+        }
+      ],
+      "retries": 2,
+      "timeout": 3
+    },
+    {
+      "op": "type",
+      "select": {
+        "role": "textfield",
+        "title": "Filename",
+        "within": {
+          "role": "window",
+          "title": "Save"
+        }
+      },
+      "text": "{path}"
+    },
+    {
+      "op": "click",
+      "select": {
+        "role": "button",
+        "title": "OK",
+        "within": {
+          "role": "window",
+          "title": "Save"
+        }
+      },
+      "expect": [
+        {
+          "gone": {
+            "role": "window",
+            "title": "Save"
+          }
+        },
+        {
+          "value": {
+            "select": {
+              "role": "text",
+              "title": "Status"
+            },
+            "equals": "Exported"
+          }
+        }
+      ]
+    }
+  ]
+}

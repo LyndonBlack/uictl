@@ -1,0 +1,16 @@
+[project]
+name = "uictl"
+version = "0.1.0"
+description = "Offline, stdlib-only UI automation CLI (macOS Accessibility / Windows UI Automation)"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+uictl = "uictl.cli:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["uictl*"]

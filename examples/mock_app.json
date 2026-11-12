@@ -1,0 +1,53 @@
+{
+  "role": "application",
+  "title": "DemoApp",
+  "children": [
+    {
+      "role": "AXWindow",
+      "title": "Reports",
+      "children": [
+        {
+          "role": "AXTextField",
+          "title": "Name",
+          "value": ""
+        },
+        {
+          "role": "AXButton",
+          "title": "Export",
+          "on_click": {
+            "append_root": {
+              "role": "AXWindow",
+              "title": "Save",
+              "children": [
+                {
+                  "role": "AXTextField",
+                  "title": "Filename",
+                  "value": ""
+                },
+                {
+                  "role": "AXButton",
+                  "title": "OK",
+                  "on_click": {
+                    "remove_root_title": "Save",
+                    "set_value": {
+                      "path": [
+                        0,
+                        2
+                      ],
+                      "value": "Exported"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "role": "AXStaticText",
+          "title": "Status",
+          "value": "Idle"
+        }
+      ]
+    }
+  ]
+}

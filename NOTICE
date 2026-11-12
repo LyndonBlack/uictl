@@ -1,0 +1,3 @@
+uictl is a derivative project of HKUDS/CLI-Anything (Apache-2.0), forked from commit 34f5195.
+Files under salvage/ are unmodified copies of upstream files (paths in salvage/README.md).
+The uictl/ package, tests/ and examples/ are new work. No upstream telemetry or network code is included.
